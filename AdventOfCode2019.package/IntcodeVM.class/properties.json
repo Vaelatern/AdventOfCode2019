@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "AdventOfCode2019",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"reel",
+		"unusedReel",
+		"pc",
+		"opcodes",
+		"stdin",
+		"stdout",
+		"relbase",
+		"lastOut"
+	],
+	"name" : "IntcodeVM",
+	"type" : "normal"
+}

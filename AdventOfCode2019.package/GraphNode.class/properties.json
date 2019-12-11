@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "AdventOfCode2019",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"children",
+		"myName",
+		"memoizedDescendentNames"
+	],
+	"name" : "GraphNode",
+	"type" : "normal"
+}

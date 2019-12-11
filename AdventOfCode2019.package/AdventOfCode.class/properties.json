@@ -1,0 +1,29 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "AdventOfCode2019",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Day1input",
+		"Day2input",
+		"Day3input",
+		"Day4input",
+		"Day5input",
+		"Day6input",
+		"Day7input",
+		"Day7p1t1",
+		"Day7p1t2",
+		"Day7p1t3",
+		"Day7p2t1",
+		"Day7p2t2",
+		"Day8input",
+		"Day9input",
+		"DayAinput"
+	],
+	"instvars" : [
+		"input"
+	],
+	"name" : "AdventOfCode",
+	"type" : "normal"
+}

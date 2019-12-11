@@ -3,7 +3,7 @@ opcodeExecute
 	"comment stating purpose of message"
 
 	| opcode |
-	opcode := reel at: self pc.
+	opcode := reel at: pc.
 	^ (opcodes
 		at: opcode \\ 100
 		ifAbsent: [ [ :a :b :c | 

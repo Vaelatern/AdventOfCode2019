@@ -13,7 +13,7 @@
 		"stdin",
 		"stdout",
 		"relbase",
-		"lastOut"
+		"latestOut"
 	],
 	"name" : "IntcodeVM",
 	"type" : "normal"

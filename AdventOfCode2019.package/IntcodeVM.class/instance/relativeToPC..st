@@ -1,5 +1,5 @@
-accessing
+private
 relativeToPC: index
 	"comment stating purpose of message"
 
-	^ self reelAt: self pc + index
+	^ self reelAt:  pc + index

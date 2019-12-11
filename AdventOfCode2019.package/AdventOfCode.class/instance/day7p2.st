@@ -29,10 +29,10 @@ day7p2
 			ampC run.
 			ampD run.
 			ampE runToHalt.
-			rV := rV max: ampE lastOut.
+			rV := rV max: ampE latestOut.
 			ampA reset.
 			ampB reset.
 			ampC reset.
 			ampD reset.
-			ampE reset. ].
+			ampE reset ].
 	^ rV

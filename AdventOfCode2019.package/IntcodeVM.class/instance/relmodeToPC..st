@@ -1,5 +1,5 @@
-accessing
+private
 relmodeToPC: index
 	"comment stating purpose of message"
 
-	^ self reelAt: (self reelAt: self pc + index) + relbase
+	^ self reelAt: (self reelAt:  pc + index) + relbase

@@ -1,4 +1,4 @@
-accessing
+private
 getArg: index relative: refType put: val
 	"comment stating purpose of message"
 

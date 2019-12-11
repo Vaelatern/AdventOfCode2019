@@ -1,4 +1,4 @@
-accessing
+private
 getArg: index relative: refType
 	"comment stating purpose of message"
 

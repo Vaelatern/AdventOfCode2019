@@ -1,8 +1,7 @@
 accessing
 reel: anObject
-
-|reelAsArray|
-	reelAsArray := (',' split: anObject).
+	| reelAsArray |
+	reelAsArray := ',' split: anObject.
 	unusedReel := Dictionary new.
-	1 to: reelAsArray size do: [ :i | unusedReel at: i put: (reelAsArray at: i) asInteger  ].
+	reelAsArray doWithIndex: [ :v :i | unusedReel at: i put: v asInteger ].
 	self reset

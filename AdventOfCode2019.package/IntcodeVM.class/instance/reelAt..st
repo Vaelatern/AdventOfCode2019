@@ -1,3 +1,3 @@
-accessing
+private
 reelAt: i
-	^ reel at: i ifAbsentPut: 0
+	^ reel at: i ifAbsent: 0

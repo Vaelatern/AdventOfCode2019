@@ -1,15 +1,18 @@
 {
-	"commentStamp" : "<historical>",
+	"commentStamp" : "",
 	"super" : "Object",
 	"category" : "AdventOfCode2019",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"TestResultBp2"
-	],
+	"classvars" : [ ],
 	"instvars" : [
-		"input"
+		"x",
+		"y",
+		"z",
+		"dx",
+		"dy",
+		"dz"
 	],
-	"name" : "AdventOfCode",
+	"name" : "Moon",
 	"type" : "normal"
 }

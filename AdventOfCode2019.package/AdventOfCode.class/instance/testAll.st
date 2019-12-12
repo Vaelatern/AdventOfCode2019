@@ -2,39 +2,106 @@ tests
 testAll
 	"comment stating purpose of message"
 
-	| assert allTests doTest |
+	| assert |
 	assert := [ :aBlock | 
 	aBlock value
 		ifFalse: [ AssertionFailure signal: 'Assertion failed' ] ].
-	doTest := [ :key :value | 
 	assert
 		value: [ (self
-				input: (self perform: value first);
-				perform: key) = value second ] ].
-	allTests := 
-	(Dictionary new)
-		at: #day1p1 put: #(#Day1input 3363033);
-		at: #day1p2 put: #(#Day1input 5041680);
-		at: #day2p1 put: #(#Day2input 3085697);
-		at: #day2p2 put: #(#Day2input 9425);
-		at: #day3p1 put: #(#Day3input 2193);
-		at: #day3p2 put: #(#Day3input 63526);
-		at: #day4p1 put: #(#Day4input 1864);
-		at: #day4p2 put: #(#Day4input 1258);
-		at: #day5p1 put: #(#Day5input #(0 0 0 0 0 0 0 0 0 5577461));
-		at: #day5p2 put: #(#Day5input 7161591);
-		at: #day6p1 put: #(#Day6input 358244);
-		at: #day6p2 put: #(#Day6input 517);
-		at: #day7p1 put: #(#Day7input 30940);
-		at: #day7p2 put: #(#Day7input 76211147);
-		at: #day8p1 put: #(#Day8input 2032);
-		at: #day8p2
-			put:
-			#(#Day8input #(0 1 1 0 0 1 1 1 1 0 0 1 1 0 0 1 0 0 1 0 0 1 1 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 0 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 1 1 1 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 1 1 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 0 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 1 1 1 0));
-		at: #day9p1 put: #(#Day9input 3518157894);
-		at: #day9p2 put: #(#Day9input 80379);
-		at: #dayAp1 put: #(#DayAinput 309);
-		at: #dayAp2 put: #(#DayAinput 416);
-		yourself.
-	allTests keysAndValuesDo: doTest.
+				input: self Day1input;
+				day1p1) = 3363033 ].
+	assert
+		value: [ (self
+				input: self Day1input;
+				day1p2) = 5041680 ].
+	assert
+		value: [ (self
+				input: self Day2input;
+				day2p1) = 3085697 ].
+	assert
+		value: [ (self
+				input: self Day2input;
+				day2p2) = 9425 ].
+	assert
+		value: [ (self
+				input: self Day3input;
+				day3p1) = 2193 ].
+	assert
+		value: [ (self
+				input: self Day3input;
+				day3p2) = 63526 ].
+	assert
+		value: [ (self
+				input: self Day4input;
+				day4p1) = 1864 ].
+	assert
+		value: [ (self
+				input: self Day4input;
+				day4p2) = 1258 ].
+	assert
+		value: [ (self
+				input: self Day5input;
+				day5p1) = #(0 0 0 0 0 0 0 0 0 5577461) ].
+	assert
+		value: [ (self
+				input: self Day5input;
+				day5p2) = 7161591 ].
+	assert
+		value: [ (self
+				input: self Day6input;
+				day6p1) = 358244 ].
+	assert
+		value: [ (self
+				input: self Day6input;
+				day6p2) = 517 ].
+	assert
+		value: [ (self
+				input: self Day7input;
+				day7p1) = 30940 ].
+	assert
+		value: [ (self
+				input: self Day7input;
+				day7p2) = 76211147 ].
+	assert
+		value: [ (self
+				input: self Day8input;
+				day8p1) = 2032 ].
+	assert
+		value: [ (self
+				input: self Day8input;
+				day8p2)
+				=
+					#(0 1 1 0 0 1 1 1 1 0 0 1 1 0 0 1 0 0 1 0 0 1 1 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 0 1 0 0 1 0 1 0 0 1 0 1 0 0 0 0 1 1 1 0 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 1 0 1 0 1 1 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 0 1 0 0 1 0 1 0 0 1 0 0 1 1 0 0 1 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 1 1 1 0) ].
+	assert
+		value: [ (self
+				input: self Day9input;
+				day9p1) = 3518157894 ].
+	assert
+		value: [ (self
+				input: self Day9input;
+				day9p2) = 80379 ].
+	assert
+		value: [ (self
+				input: self DayAinput;
+				dayAp1) = 309 ].
+	assert
+		value: [ (self
+				input: self DayAinput;
+				dayAp2) = 416 ].
+	assert
+		value: [ (self
+				input: self DayBinput;
+				dayBp1) = 2082 ].
+	assert
+		value: [ (self
+				input: self DayBinput;
+				dayBp2) = (self class classVarNamed: #TestResultBp2) ].
+	assert
+		value: [ (self
+				input: self DayCinput;
+				dayCp1) = 8044 ].
+			assert
+		value: [ (self
+				input: self DayCinput;
+				dayCp2) = 362375881472136 ].
 	^ 'Every test passes'

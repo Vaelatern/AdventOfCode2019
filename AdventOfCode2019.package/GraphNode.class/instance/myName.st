@@ -1,3 +1,0 @@
-accessing
-myName
-	^ myName

@@ -1,8 +1,8 @@
 problems
-dayCp2
-	"dayCp2 with the realization that the loop must proceed through the original state (since state n-1 can be computed knowing only state n)"
+dayCp2slow
+	"comment stating purpose of message"
 
-	| moons pastX pastY pastZ loop loopX loopY loopZ makeState lcm3 frequencies mergeDicts |
+	| moons pastX pastY pastZ loopX loopY loopZ makeState lcm3 frequencies mergeDicts |
 	moons := input lines
 		collect: [ :line | 
 			| locs |
@@ -40,24 +40,28 @@ dayCp2
 				ifFalse: [ gety
 						ifTrue: [ m stateY ]
 						ifFalse: [ m stateZ ] ] ] ].
-	pastX := makeState value: moons value: true value: false.
-	pastY := makeState value: moons value: false value: true.
-	pastZ := makeState value: moons value: false value: false.
+	pastX := Set new: 100000.
+	pastY := Set new: 100000.
+	pastZ := Set new: 100000.
 	loopX := loopY := loopZ := nil.
-	loop := 1.
 	[ loopX notNil and: (loopY notNil and: loopZ notNil) ]
-		whileFalse: [ moons do: [ :moon | moon considerMoons: moons ].
+		whileFalse: [ loopX isNil
+				ifTrue: [ pastX add: (makeState value: moons value: true value: false) ].
+			loopY isNil
+				ifTrue: [ pastY add: (makeState value: moons value: false value: true) ].
+			loopZ isNil
+				ifTrue: [ pastZ add: (makeState value: moons value: false value: false) ].
+			moons do: [ :moon | moon considerMoons: moons ].
 			moons do: [ :moon | moon step ].
 			loopX isNil
-				ifTrue: [ pastX = (makeState value: moons value: true value: false)
-						ifTrue: [ loopX := loop ] ].
+				ifTrue: [ (pastX includes: (makeState value: moons value: true value: false))
+						ifTrue: [ loopX := pastX size ] ].
 			loopY isNil
-				ifTrue: [ pastY = (makeState value: moons value: false value: true)
-						ifTrue: [ loopY := loop ] ].
+				ifTrue: [ (pastY includes: (makeState value: moons value: false value: true))
+						ifTrue: [ loopY := pastY size ] ].
 			loopZ isNil
-				ifTrue: [ pastZ = (makeState value: moons value: false value: false)
-						ifTrue: [ loopZ := loop ] ].
-			loop := loop + 1 ].
+				ifTrue: [ (pastZ includes: (makeState value: moons value: false value: false))
+						ifTrue: [ loopZ := pastZ size ] ] ].
 	^ lcm3
 		value: loopX primeFactors
 		value: loopY primeFactors

@@ -1,5 +1,5 @@
 constants
-DayCinput
+dayCinput
 	"comment stating purpose of message"
 
 	^ '<x=-13, y=-13, z=-13>

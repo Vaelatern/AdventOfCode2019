@@ -9,10 +9,10 @@ testAll
 	self testMost.
 	assert
 		value: [ (self
-				input: self Day3input;
+				input: self day3input;
 				day3p2) = 63526 ].
 	assert
 		value: [ (self
-				input: self DayCinput;
+				input: self dayCinput;
 				dayCp2) = 362375881472136 ].
 	^ 'Every test passes'

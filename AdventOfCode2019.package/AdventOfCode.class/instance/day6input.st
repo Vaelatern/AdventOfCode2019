@@ -1,5 +1,5 @@
 constants
-Day6input
+day6input
 	"comment stating purpose of message"
 
 	^ 'YMK)12Q

@@ -2,4 +2,4 @@ accessing
 halted
 	"comment stating purpose of message"
 
-	^ halted
+	^ halted and: stdout isEmpty 

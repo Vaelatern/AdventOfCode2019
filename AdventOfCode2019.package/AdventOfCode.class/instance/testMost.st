@@ -96,4 +96,12 @@ testMost
 		value: [ (self
 				input: self dayCinput;
 				dayCp1) = 8044 ].
+	assert
+		value: [ (self
+				input: self dayDinput;
+				dayDp1) = 344 ].
+	assert
+		value: [ (self
+				input: self dayDinput;
+				dayDp2) = 17336 ].
 	^ 'Every test passes'

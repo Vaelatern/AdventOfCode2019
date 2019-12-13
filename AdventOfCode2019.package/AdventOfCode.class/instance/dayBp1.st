@@ -32,5 +32,6 @@ dayBp1
 												ifTrue: [ -1 @ 0 ]
 												ifFalse: [ dir = (1 @ 0)
 														ifTrue: [ 0 @ -1 ]
-														ifFalse: [ nil ] ] ] ] ]) ].
+														ifFalse: [ nil ] ] ] ] ]).
+										Processor yield.].
 	^ panelsPainted size

@@ -2,7 +2,7 @@ problems
 day7p2
 	"comment stating purpose of message"
 
-	| rV ampA ampB ampC ampD ampE |
+	| rV ampA ampB ampC ampD ampE vms |
 	ampA := IntcodeVM new reel: input.
 	ampB := IntcodeVM new reel: input.
 	ampC := IntcodeVM new reel: input.
@@ -13,26 +13,24 @@ day7p2
 	ampC stdinRaw: ampB stdoutRaw.
 	ampD stdinRaw: ampC stdoutRaw.
 	ampE stdinRaw: ampD stdoutRaw.
+	vms := Array
+		with: ampA
+		with: ampB
+		with: ampC
+		with: ampD
+		with: ampE.
 	rV := 0.
 	'56789'
 		permutationsDo: [ :order | 
 			| ordered |
 			ordered := order asOrderedCollection.
-			ampA stdin: ordered removeFirst asString asInteger.
+			vms do: [ :i | i stdin: ordered removeFirst asString asInteger ].
 			ampA stdin: 0.
-			ampB stdin: ordered removeFirst asString asInteger.
-			ampC stdin: ordered removeFirst asString asInteger.
-			ampD stdin: ordered removeFirst asString asInteger.
-			ampE stdin: ordered removeFirst asString asInteger.
-			ampA run.
-			ampB run.
-			ampC run.
-			ampD run.
-			ampE runToHalt.
+			vms
+				do: [ :i | 
+					i == ampE
+						ifTrue: [ i runToHalt ]
+						ifFalse: [ i run ] ].
 			rV := rV max: ampE latestOut.
-			ampA reset.
-			ampB reset.
-			ampC reset.
-			ampD reset.
-			ampE reset ].
+			vms do: [ :i | i reset ] ].
 	^ rV

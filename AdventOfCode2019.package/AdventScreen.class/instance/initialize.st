@@ -5,4 +5,5 @@ initialize
 	super initialize.
 	self extent: 300 @ 300.
 	form := Form extent: self extent depth: 16.
-	positions := Dictionary new.
+	rawPositions := Dictionary new.
+	recMultiple := 5

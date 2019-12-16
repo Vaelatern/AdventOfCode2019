@@ -10,5 +10,5 @@ drawOn: aCanvas
 			| modK |
 			modK := k x @ (maxY + 1 - k y).
 			form
-				fill: (Rectangle new setPoint: modK * 4 point: modK * 4 + 3)
+				fill: (Rectangle new setPoint: modK * recMultiple point: modK * recMultiple + (recMultiple - 1))
 				fillColor: v ]

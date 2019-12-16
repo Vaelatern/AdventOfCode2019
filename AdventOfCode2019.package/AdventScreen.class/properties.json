@@ -12,7 +12,9 @@
 		"onDown",
 		"onLeft",
 		"onRight",
-		"positions"
+		"positions",
+		"recMultiple",
+		"rawPositions"
 	],
 	"name" : "AdventScreen",
 	"type" : "normal"

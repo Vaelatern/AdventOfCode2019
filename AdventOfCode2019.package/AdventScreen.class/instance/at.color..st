@@ -8,5 +8,6 @@ at: point color: c
 		ifTrue: [ col := c = 1
 				ifTrue: [ Color white ]
 				ifFalse: [ Color black ] ].
-	positions at: point put: col.
+	rawPositions at: point put: col.
+	self normalizePositions.
 	self changed

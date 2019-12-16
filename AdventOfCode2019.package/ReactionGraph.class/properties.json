@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "AdventOfCode2019",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"numOfMe",
+		"myName",
+		"requires"
+	],
+	"name" : "ReactionGraph",
+	"type" : "normal"
+}
